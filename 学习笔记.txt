@@ -70,4 +70,20 @@ git merge 分支名字
 删除分支
 git branch -D dev 
 
+命令可以看到分支合并图
+git log --graph
+
+提交远程服务器
+git push -u origin master 
+ 
+内容冲突:
+<<<<<<< HEAD
+Creating a new branch is quick & simple.
+=======
+Creating a new branch is quick AND simple.
+>>>>>>> feature1
+
+Git用<<<<<<<，=======，>>>>>>>标记出不同分支的内容
+
+
 
