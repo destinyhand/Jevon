@@ -37,7 +37,20 @@ git status
 ssh-keygen -t rsa -C "lovemissyou59521@163.com"
 
 本地仓库和远程仓库进行关联操作
-git remote add origin git@github.com:destinyhand/Jevon.git
+git remote add origin git@github.com:用户/仓库名.git
+
+克隆仓库
+git clone git@github.com:用户/仓库名.git
+
+
+查看目录下的文件
+ls
+
+创建分支并且切换到分支
+git checkout -b 分支名字
+
+查看当前的分支
+git branch
 
 
  
