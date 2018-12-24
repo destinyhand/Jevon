@@ -39,10 +39,10 @@ ssh-keygen -t rsa -C "lovemissyou59521@163.com"
 本地仓库和远程仓库进行关联操作
 git remote add origin git@github.com:destinyhand/Jevon.git
 
+切换分支
+git checkout master
 
- 
+分支进行合并的操作
+git merge 分支名字
 
-
-
-
-
+----主分支本次结束
