@@ -1,3 +1,27 @@
-测试添加和提交文件
+初始化GIT仓库
+git init 
 
-第二次进行修改的操作，进行文件的提交
+添加文件的操作:
+git add 文件名字
+
+查看当前的目录
+pwd
+
+
+提交文件
+git comiit -m "提交说明"
+
+查看提交记录
+git log 
+
+精简的提交记录信息
+git log --pretty=oneline
+
+回退版本
+git reset --hard head^ //上一个版本
+git rest --hard 版本号  //回退到具体的版本
+
+查看所有的提交日志
+git reflog
+
+
