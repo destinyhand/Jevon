@@ -9,7 +9,7 @@ pwd
 
 
 提交文件
-git comiit -m "提交说明"
+git comit -m "提交说明"
 
 查看提交记录
 git log 
@@ -23,5 +23,26 @@ git rest --hard 版本号  //回退到具体的版本
 
 查看所有的提交日志
 git reflog
+
+撤销最近进行的修改操作
+git checkout -- 文件     //提交或者暂存的
+
+撤销暂存区的修改
+git reset head<file>
+
+查看目前工作区的状态
+git status
+
+创建本地仓库密钥SSH
+ssh-keygen -t rsa -C "lovemissyou59521@163.com"
+
+本地仓库和远程仓库进行关联操作
+git remote add origin git@github.com:destinyhand/Jevon.git
+
+
+ 
+
+
+
 
 
