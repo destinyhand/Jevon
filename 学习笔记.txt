@@ -52,6 +52,8 @@ git checkout -b 分支名字
 查看当前的分支
 git branch
 
+切换版本分支
+git checkout master
 
  
 
