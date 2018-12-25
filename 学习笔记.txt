@@ -172,9 +172,21 @@ git rebase -i head~3   //查看并且修改前3条提交日志  3任意数字，
 分支提交信息直接合并主分支编程一条直线记录
 git rebase （本地合并还未推送服务器的操作，推送了服务器无法执行）
 
+打标签:（标签始终是和一次commit一起的）
+git tag 标签名字
+比如:git tag v1.0
 
+查看所有的标签:
+git tag
 
+给历史提交打上标签:
+git tag -a 标签 -m "描述" commitID  -a指定标签名字  -m可以添加说明文字
 
+查看说明文字
+git show <tagname>
+
+标签总是和某个commit挂钩。如果这个commit既出现在master分支，又出现在dev分支，那么在这两个分支上都可以看到这个标签。
+标签默认在head上
 
 
 
