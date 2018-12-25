@@ -1,6 +1,10 @@
 ﻿创建文件夹
 mkdir 文件夹名字
 
+创建文件
+1.touch + 文件名字
+2.vi + 文件名字 //不存在创建文件并且进入编辑，存在直接编辑
+
 切换文件夹
 cd 文件夹
 
@@ -94,5 +98,70 @@ Git用<<<<<<<，=======，>>>>>>>标记出不同分支的内容
 
 支持中文路径
 git config --global core.quotepath false
+
+分支管理策略
+合并分支如果可能的话一般使用git forward模式，这种模式在删除分之后，就会丢失分支的信息，
+如果强制禁用git forward模式，GIT就会新生成一个commit提交信息，这样历史上就可以查找到分支信息
+--no-ff 强制关闭fast forward模式，GIT就会新生成一个commit提交信息，这样历史上就可以查找到分支信息
+
+git merge --no-ff -m "合并分支代码,关闭fast forward"  dev //由于需要commit所以需要写日志
+
+BUG分支
+当前的工作进行了一半，但是有需要临时处理一下bug使用stash把当前的工作储藏起来，等待BUG修复以后继续工作
+
+储藏当前的工作
+git stash 
+
+查看储藏工作
+git stash list
+
+//内容的格式如下
+stash@{0}: WIP on dev: f52c633 add merge 
+
+还原储藏
+git stash pop  //还原的同时删除stash内容
+git stash apply  //还原   git stash  drop  //刪除  =>和上面的效果一致
+
+
+还原到指定的版本
+git stash apply stash@{0}
+
+删除未来版本分支
+删除分支的前提是代码合并了，如果未来分支代码提交了但是没有合并主分支，使用常规的删除会失败，使用-D 强制删除分支
+git branch -D feature-vulcan  //-d是常规的删除
+如果要丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除
+
+
+多人协作:
+
+查看远程库信息
+git remote  // -v可以查看更详细的信息
+
+推送其他分支
+git push origin  xxx
+
+
+如果远程存在多个分支直接推送会报错，推送关联远程分支
+git branch --set-upstream-to=origin/dev dev
+
+因此，多人协作的工作模式通常是这样：
+
+首先，可以试图用git push origin <branch-name>推送自己的修改；
+
+如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；
+
+如果合并有冲突，则解决冲突，并在本地提交；
+
+没有冲突或者解决掉冲突后，再用git push origin <branch-name>推送就能成功！
+
+如果git pull提示no tracking information，则说明本地分支和远程分支的链接关系没有创建，
+用命令git branch --set-upstream-to <branch-name> origin/<branch-name>。
+
+在本地创建和远程分支对应的分支
+git checkout -b branch-name origin/branch-name
+
+查看提交记录
+git log --graph --pretty=oneline --abbrev-commit
+
 
 
