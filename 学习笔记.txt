@@ -166,6 +166,14 @@ git log --graph --pretty=oneline --abbrev-commit
 重新修改提交的日志(最新)
 git commit --amend
 
+修改历史记录
+git rebase -i head~3   //查看并且修改前3条提交日志  3任意数字，只要历史版本存在就行
+
+分支提交信息直接合并主分支编程一条直线记录
+git rebase （本地合并还未推送服务器的操作，推送了服务器无法执行）
+
+
+
 
 
 
