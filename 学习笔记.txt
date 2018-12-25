@@ -86,7 +86,11 @@ Creating a new branch is quick AND simple.
 Git用<<<<<<<，=======，>>>>>>>标记出不同分支的内容
 
 
-111
+删除文件
+ git rm  文件名字
+
+删除文件夹
+ git rm 文件夹名字 -r -f
 
 
 
