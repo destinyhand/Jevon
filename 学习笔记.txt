@@ -92,5 +92,7 @@ Git用<<<<<<<，=======，>>>>>>>标记出不同分支的内容
 删除文件夹
  git rm 文件夹名字 -r -f
 
+支持中文路径
+git config --global core.quotepath false
 
 
