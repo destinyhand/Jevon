@@ -163,5 +163,11 @@ git checkout -b branch-name origin/branch-name
 查看提交记录
 git log --graph --pretty=oneline --abbrev-commit
 
+重新修改提交的日志(最新)
+git commit --amend
+
+
+
+
 
 
